@@ -33,7 +33,8 @@ public class ForgeEvent {
         ModifierLayer<IAnimation> animation = (ModifierLayer<IAnimation>) animationData.get(animLocation("player_animation"));
         if (animation == null) return;
 
-        if (player.onGround() && player.getDeltaMovement().horizontalDistanceSqr() > 0.01){
+        BendsMod.LOGGER.info(String.valueOf(player.getDeltaMovement().horizontalDistanceSqr()));
+        if (player.getDeltaMovement().horizontalDistanceSqr() > 0){
             if (animation.getAnimation() != null && animation.getAnimation() instanceof KeyframeAnimationPlayer keyframeAnimation) {
                 if (keyframeAnimation.getData().extraData.containsValue("\"walking\"")){
                     return;
