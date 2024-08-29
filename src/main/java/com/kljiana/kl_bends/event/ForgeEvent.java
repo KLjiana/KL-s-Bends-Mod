@@ -26,25 +26,37 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = BendsMod.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ForgeEvent {
     @SubscribeEvent
-    public static void walkAnim(TickEvent.PlayerTickEvent event){
-        if (event.side.isServer()) return;
-        AbstractClientPlayer player = (AbstractClientPlayer) event.player;
+    public static void walkAnim(TickEvent.ClientTickEvent event) {
+        LocalPlayer player = Minecraft.getInstance().player;
+        if (player == null) return;
+
         PlayerAnimationAccess.PlayerAssociatedAnimationData animationData = PlayerAnimationAccess.getPlayerAssociatedData(player);
         ModifierLayer<IAnimation> animation = (ModifierLayer<IAnimation>) animationData.get(animLocation("player_animation"));
         if (animation == null) return;
 
-
-        if (player.getDeltaMovement().horizontalDistanceSqr() > 0.02){
+        BendsMod.LOGGER.info(String.valueOf(player.getDeltaMovement()));
+        if (!player.onGround() && player.getDeltaMovement().y > 0) {
             if (animation.getAnimation() != null && animation.getAnimation() instanceof KeyframeAnimationPlayer keyframeAnimation) {
-                if (keyframeAnimation.getData().extraData.containsValue("\"run\"")){
-                    return;
+                if (!keyframeAnimation.getData().extraData.containsValue("\"jump\"")) {
+                    AbstractFadeModifier fadeModifier = AbstractFadeModifier.standardFadeIn(3, Ease.INOUTSINE);
+                    animation.replaceAnimationWithFade(fadeModifier, frameLocation("jump"));
                 }
+                return;
+            }
+            animation.setAnimation(frameLocation("jump"));
+        } else if (player.getDeltaMovement().horizontalDistanceSqr() > 0.02) {
+            if (animation.getAnimation() != null && animation.getAnimation() instanceof KeyframeAnimationPlayer keyframeAnimation) {
+                if (!keyframeAnimation.getData().extraData.containsValue("\"run\"")) {
+                    AbstractFadeModifier fadeModifier = AbstractFadeModifier.standardFadeIn(10, Ease.OUTEXPO);
+                    animation.replaceAnimationWithFade(fadeModifier, frameLocation("run"));
+                }
+                return;
             }
             animation.setAnimation(frameLocation("run"));
         } else if (player.getDeltaMovement().horizontalDistanceSqr() > 0.01) {
             if (animation.getAnimation() != null && animation.getAnimation() instanceof KeyframeAnimationPlayer keyframeAnimation) {
                 if (!keyframeAnimation.getData().extraData.containsValue("\"walking\"")) {
-                    AbstractFadeModifier fadeModifier = AbstractFadeModifier.standardFadeIn(18, Ease.OUTEXPO);
+                    AbstractFadeModifier fadeModifier = AbstractFadeModifier.standardFadeIn(10, Ease.OUTEXPO);
                     animation.replaceAnimationWithFade(fadeModifier, frameLocation("walking"));
                 }
                 return;
@@ -53,7 +65,7 @@ public class ForgeEvent {
         } else {
             if (animation.getAnimation() != null && animation.getAnimation() instanceof KeyframeAnimationPlayer keyframeAnimation) {
                 if (!keyframeAnimation.getData().extraData.containsValue("\"rest\"")) {
-                    AbstractFadeModifier fadeModifier = AbstractFadeModifier.standardFadeIn(18, Ease.OUTEXPO);
+                    AbstractFadeModifier fadeModifier = AbstractFadeModifier.standardFadeIn(10, Ease.INOUTSINE);
                     animation.replaceAnimationWithFade(fadeModifier, frameLocation("rest"));
                 }
                 return;
@@ -62,11 +74,11 @@ public class ForgeEvent {
         }
     }
 
-    private static ResourceLocation animLocation(String path){
+    private static ResourceLocation animLocation(String path) {
         return new ResourceLocation(BendsMod.MODID, path);
     }
 
-    private static KeyframeAnimationPlayer frameLocation(String path){
+    private static KeyframeAnimationPlayer frameLocation(String path) {
         KeyframeAnimation keyframeAnimation = PlayerAnimationRegistry.getAnimation(animLocation(path));
         if (keyframeAnimation != null) {
             return new KeyframeAnimationPlayer(keyframeAnimation);

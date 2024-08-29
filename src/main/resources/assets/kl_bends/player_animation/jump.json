@@ -1,0 +1,160 @@
+{
+    "name": "jump",
+    "author": "KL_jiana",
+    "description": "description",
+    "emote":{
+        "isLoop": "false",
+        "returnTick": 2,
+        "beginTick":0,
+        "endTick":6,
+        "stopTick":6,
+        "degrees":false,
+        "moves":[
+            
+            {
+                "tick":2,
+                "easing": "EASEINOUTQUAD",
+                "turn": 0,
+                "torso":{
+                    "pitch":-0.11362945288419724
+                }
+            },
+            {
+                "tick":6,
+                "easing": "EASEINOUTQUAD",
+                "turn": 0,
+                "torso":{
+                    "pitch":-0.2732542157173157
+                }
+            },
+            {
+                "tick":6,
+                "easing": "EASEINOUTQUAD",
+                "turn": 0,
+                "rightArm":{
+                    "yaw":0.019195301458239555
+                }
+            },
+            {
+                "tick":6,
+                "easing": "EASEINOUTQUAD",
+                "turn": 0,
+                "rightArm":{
+                    "roll":0.31564149260520935
+                }
+            },
+            {
+                "tick":6,
+                "easing": "EASEINOUTQUAD",
+                "turn": 0,
+                "rightArm":{
+                    "pitch":0.0023713980335742235
+                }
+            },
+            {
+                "tick":6,
+                "easing": "EASEINOUTQUAD",
+                "turn": 0,
+                "rightArm":{
+                    "bend":-0.09531395137310028
+                }
+            },
+            {
+                "tick":6,
+                "easing": "EASEINOUTQUAD",
+                "turn": 0,
+                "leftArm":{
+                    "roll":-0.32076218724250793
+                }
+            },
+            {
+                "tick":6,
+                "easing": "EASEINOUTQUAD",
+                "turn": 0,
+                "leftArm":{
+                    "yaw":-0.01421009935438633
+                }
+            },
+            {
+                "tick":6,
+                "easing": "EASEINOUTQUAD",
+                "turn": 0,
+                "leftArm":{
+                    "pitch":0.0012905264738947153
+                }
+            },
+            {
+                "tick":6,
+                "easing": "EASEINOUTQUAD",
+                "turn": 0,
+                "leftArm":{
+                    "bend":-0.05699077248573303
+                }
+            },
+            {
+                "tick":6,
+                "easing": "EASEINOUTQUAD",
+                "turn": 0,
+                "rightLeg":{
+                    "yaw":0.042742181569337845
+                }
+            },
+            {
+                "tick":6,
+                "easing": "EASEINOUTQUAD",
+                "turn": 0,
+                "rightLeg":{
+                    "roll":0.08158194273710251
+                }
+            },
+            {
+                "tick":6,
+                "easing": "EASEINOUTQUAD",
+                "turn": 0,
+                "rightLeg":{
+                    "pitch":-0.6174415349960327
+                }
+            },
+            {
+                "tick":6,
+                "easing": "EASEINOUTQUAD",
+                "turn": 0,
+                "rightLeg":{
+                    "bend":1.060235619544983
+                }
+            },
+            {
+                "tick":6,
+                "easing": "EASEINOUTQUAD",
+                "turn": 0,
+                "leftLeg":{
+                    "yaw":-0.18130268156528473
+                }
+            },
+            {
+                "tick":6,
+                "easing": "EASEINOUTQUAD",
+                "turn": 0,
+                "leftLeg":{
+                    "roll":-0.0917719304561615
+                }
+            },
+            {
+                "tick":6,
+                "easing": "EASEINOUTQUAD",
+                "turn": 0,
+                "leftLeg":{
+                    "pitch":-0.2805832028388977
+                }
+            },
+            {
+                "tick":6,
+                "easing": "EASEINOUTQUAD",
+                "turn": 0,
+                "leftLeg":{
+                    "bend":0.3237402141094208
+                }
+            }
+        ]
+    }
+}
