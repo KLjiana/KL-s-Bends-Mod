@@ -33,12 +33,21 @@ public class ForgeEvent {
         ModifierLayer<IAnimation> animation = (ModifierLayer<IAnimation>) animationData.get(animLocation("player_animation"));
         if (animation == null) return;
 
-        BendsMod.LOGGER.info(String.valueOf(player.getDeltaMovement().horizontalDistanceSqr()));
-        if (player.getDeltaMovement().horizontalDistanceSqr() > 0){
+
+        if (player.getDeltaMovement().horizontalDistanceSqr() > 0.02){
             if (animation.getAnimation() != null && animation.getAnimation() instanceof KeyframeAnimationPlayer keyframeAnimation) {
-                if (keyframeAnimation.getData().extraData.containsValue("\"walking\"")){
+                if (keyframeAnimation.getData().extraData.containsValue("\"run\"")){
                     return;
                 }
+            }
+            animation.setAnimation(frameLocation("run"));
+        } else if (player.getDeltaMovement().horizontalDistanceSqr() > 0.01) {
+            if (animation.getAnimation() != null && animation.getAnimation() instanceof KeyframeAnimationPlayer keyframeAnimation) {
+                if (!keyframeAnimation.getData().extraData.containsValue("\"walking\"")) {
+                    AbstractFadeModifier fadeModifier = AbstractFadeModifier.standardFadeIn(18, Ease.OUTEXPO);
+                    animation.replaceAnimationWithFade(fadeModifier, frameLocation("walking"));
+                }
+                return;
             }
             animation.setAnimation(frameLocation("walking"));
         } else {
