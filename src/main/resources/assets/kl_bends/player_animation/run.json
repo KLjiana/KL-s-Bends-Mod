@@ -256,7 +256,7 @@
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "rightLeg":{
-                    "pitch":-0.8421196341514587
+                    "pitch":-0.8770262598991394
                 }
             },
             {
@@ -264,7 +264,7 @@
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "rightLeg":{
-                    "pitch":0.5840657353401184
+                    "pitch":0.6538789868354797
                 }
             },
             {
@@ -272,7 +272,7 @@
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "rightLeg":{
-                    "pitch":-0.8421196341514587
+                    "pitch":-0.8770262598991394
                 }
             },
             {
@@ -312,7 +312,7 @@
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "rightLeg":{
-                    "bend":1.5351130962371826
+                    "bend":1.4129399061203003
                 }
             },
             {
@@ -320,7 +320,7 @@
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "rightLeg":{
-                    "bend":1.5351130962371826
+                    "bend":1.4129399061203003
                 }
             },
             {
@@ -352,7 +352,7 @@
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "leftLeg":{
-                    "pitch":0.5840657353401184
+                    "pitch":0.6538788676261902
                 }
             },
             {
@@ -360,7 +360,7 @@
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "leftLeg":{
-                    "pitch":-0.8421196341514587
+                    "pitch":-0.8770262598991394
                 }
             },
             {
@@ -368,7 +368,7 @@
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "leftLeg":{
-                    "pitch":-0.8421196341514587
+                    "pitch":-0.8770262598991394
                 }
             },
             {
@@ -376,7 +376,7 @@
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "leftLeg":{
-                    "pitch":0.5840657353401184
+                    "pitch":0.6538789868354797
                 }
             },
             {
@@ -392,7 +392,7 @@
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "leftLeg":{
-                    "bend":1.5351130962371826
+                    "bend":1.4129399061203003
                 }
             },
             {
@@ -424,7 +424,7 @@
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "leftLeg":{
-                    "bend":1.5351130962371826
+                    "bend":1.4129399061203003
                 }
             }
         ]

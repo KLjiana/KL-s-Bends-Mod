@@ -11,15 +11,37 @@ import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationRegistry;
 import net.minecraft.resources.ResourceLocation;
 
 public class AnimUtil {
-    public static boolean replaceAnimation(ModifierLayer<IAnimation> animation, String name){
+    private static ModifierLayer<IAnimation> utilAnimation;
+
+    public static void setUtilAnimation(ModifierLayer<IAnimation> animation){
+        utilAnimation = animation;
+    }
+
+    public static boolean replaceAnimation(ModifierLayer<IAnimation> animation, String name, int length, Ease ease){
         if (animation.getAnimation() != null && animation.getAnimation() instanceof KeyframeAnimationPlayer keyframeAnimation) {
             if (!keyframeAnimation.getData().extraData.containsValue(String.format("\"%s\"", name))) {
-                AbstractFadeModifier fadeModifier = AbstractFadeModifier.standardFadeIn(10, Ease.OUTEXPO);
+                AbstractFadeModifier fadeModifier = AbstractFadeModifier.standardFadeIn(length, ease);
                 animation.replaceAnimationWithFade(fadeModifier, frameLocation(name));
             }
             return true;
         }
         return false;
+    }
+
+    public static boolean replaceAnimation(ModifierLayer<IAnimation> animation, String name){
+        return replaceAnimation(animation, name, 10, Ease.OUTEXPO);
+    }
+
+    public static boolean replaceAnimation(String name){
+        return replaceAnimation(utilAnimation, name, 10, Ease.OUTEXPO);
+    }
+
+    public static boolean replaceAnimation(String name, int length){
+        return replaceAnimation(utilAnimation, name, length, Ease.OUTEXPO);
+    }
+
+    public static boolean replaceAnimation(String name, int length, Ease ease){
+        return replaceAnimation(utilAnimation, name, length, ease);
     }
 
     public static ResourceLocation animationLocation(String path) {
