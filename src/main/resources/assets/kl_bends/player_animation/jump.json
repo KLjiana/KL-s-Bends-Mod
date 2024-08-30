@@ -12,19 +12,11 @@
         "moves":[
             
             {
-                "tick":2,
-                "easing": "EASEINOUTQUAD",
-                "turn": 0,
-                "torso":{
-                    "pitch":-0.11362945288419724
-                }
-            },
-            {
                 "tick":6,
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "torso":{
-                    "pitch":-0.2732542157173157
+                    "pitch":-0.18598774075508118
                 }
             },
             {
@@ -40,7 +32,7 @@
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "rightArm":{
-                    "roll":0.31564149260520935
+                    "roll":0.4901743233203888
                 }
             },
             {
@@ -64,7 +56,7 @@
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "leftArm":{
-                    "roll":-0.32076218724250793
+                    "roll":-0.4952950179576874
                 }
             },
             {
@@ -104,7 +96,7 @@
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "rightLeg":{
-                    "roll":0.08158194273710251
+                    "roll":0.15139511227607727
                 }
             },
             {
@@ -112,7 +104,7 @@
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "rightLeg":{
-                    "pitch":-0.6174415349960327
+                    "pitch":-0.687254786491394
                 }
             },
             {
@@ -120,7 +112,7 @@
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "rightLeg":{
-                    "bend":1.060235619544983
+                    "bend":1.0776889324188232
                 }
             },
             {
@@ -136,7 +128,7 @@
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "leftLeg":{
-                    "roll":-0.0917719304561615
+                    "roll":-0.14413180947303772
                 }
             },
             {
@@ -144,7 +136,7 @@
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "leftLeg":{
-                    "pitch":-0.2805832028388977
+                    "pitch":-0.1933167278766632
                 }
             },
             {

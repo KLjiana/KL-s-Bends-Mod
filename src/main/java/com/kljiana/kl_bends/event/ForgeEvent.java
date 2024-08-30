@@ -32,9 +32,10 @@ public class ForgeEvent {
         if (animation == null) return;
 
         setUtilAnimation(animation);
+        BendsMod.LOGGER.info(String.valueOf(player.getDeltaMovement().horizontalDistanceSqr()));
         if (isPlayerRun(player)) {
             if (!player.onGround() && !compoundTag.getBoolean("jump")){
-                animation.addModifier(new SpeedModifier(0.48f), 0);
+                animation.addModifierBefore(new SpeedModifier(0.49f));
                 compoundTag.putBoolean("jump", true);
             } else if (player.onGround() && compoundTag.getBoolean("jump")) {
                 animation.removeModifier(0);
