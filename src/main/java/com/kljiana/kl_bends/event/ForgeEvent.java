@@ -32,14 +32,12 @@ public class ForgeEvent {
         if (animation == null) return;
 
         setUtilAnimation(animation);
-        BendsMod.LOGGER.info(String.valueOf(player.getDeltaMovement().horizontalDistanceSqr()));
-        if (isPlayerRun(player)) {
-            if (!player.onGround() && !compoundTag.getBoolean("jump")){
-                animation.addModifierBefore(new SpeedModifier(0.49f));
+        if (player.isCrouching()) {
+            replaceAnimation("crouch");
+        } else if (isPlayerRun(player)) {
+            if (!player.onGround() && !compoundTag.getBoolean("jump")) {
+                animation.addModifierBefore(new SpeedModifier(0.4f));
                 compoundTag.putBoolean("jump", true);
-            } else if (player.onGround() && compoundTag.getBoolean("jump")) {
-                animation.removeModifier(0);
-                compoundTag.putBoolean("jump", false);
             }
             replaceAnimation("run");
         } else if (isPlayerJump(player)) {
@@ -49,6 +47,10 @@ public class ForgeEvent {
         } else {
             if (replaceAnimation("rest")) return;
             animation.setAnimation(frameLocation("rest"));
+        }
+        if (player.onGround() && compoundTag.getBoolean("jump")) {
+            animation.removeModifier(0);
+            compoundTag.putBoolean("jump", false);
         }
     }
 }
