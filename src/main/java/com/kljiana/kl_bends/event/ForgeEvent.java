@@ -1,6 +1,7 @@
 package com.kljiana.kl_bends.event;
 
 import com.kljiana.kl_bends.BendsMod;
+import dev.kosmx.playerAnim.api.layered.AnimationStack;
 import dev.kosmx.playerAnim.api.layered.IAnimation;
 import dev.kosmx.playerAnim.api.layered.ModifierLayer;
 import dev.kosmx.playerAnim.api.layered.modifier.SpeedModifier;
@@ -33,6 +34,10 @@ public class ForgeEvent {
 
         setUtilAnimation(animation);
         if (player.isCrouching()) {
+            if (isPlayerWalk(player)){
+                replaceAnimation("crouch_walk");
+                return;
+            }
             replaceAnimation("crouch");
         } else if (isPlayerRun(player)) {
             if (!player.onGround() && !compoundTag.getBoolean("jump")) {
