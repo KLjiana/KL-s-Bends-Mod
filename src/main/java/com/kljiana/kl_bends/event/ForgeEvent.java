@@ -12,6 +12,8 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -56,6 +58,18 @@ public class ForgeEvent {
         if (player.onGround() && compoundTag.getBoolean("jump")) {
             animation.removeModifier(0);
             compoundTag.putBoolean("jump", false);
+        }
+    }
+
+    @SubscribeEvent
+    public static void putBlock(PlayerInteractEvent.RightClickBlock event){
+        if (!event.getSide().isClient()) return;
+
+        if (event.getEntity() instanceof LocalPlayer player){
+            PlayerAnimationAccess.PlayerAssociatedAnimationData animationData = PlayerAnimationAccess.getPlayerAssociatedData(player);
+            ModifierLayer<IAnimation> animation = (ModifierLayer<IAnimation>) animationData.get(animationLocation("player_animation"));
+            if (animation == null) return;
+            replaceAnimation(animation,"put");
         }
     }
 }
