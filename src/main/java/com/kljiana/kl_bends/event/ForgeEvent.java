@@ -34,25 +34,24 @@ public class ForgeEvent {
         ModifierLayer<IAnimation> animation = (ModifierLayer<IAnimation>) animationData.get(animationLocation("player_animation"));
         if (animation == null) return;
 
-        setUtilAnimation(animation);
         if (player.isCrouching()) {
             if (isPlayerWalk(player)){
-                replaceAnimation("crouch_walk");
+                replaceAnimation(animation, "crouch_walk");
                 return;
             }
-            replaceAnimation("crouch");
+            replaceAnimation(animation, "crouch");
         } else if (isPlayerRun(player)) {
             if (!player.onGround() && !compoundTag.getBoolean("jump")) {
                 animation.addModifierBefore(new SpeedModifier(0.4f));
                 compoundTag.putBoolean("jump", true);
             }
-            replaceAnimation("run");
+            replaceAnimation(animation, "run");
         } else if (isPlayerJump(player)) {
-            replaceAnimation("jump", 2);
+            replaceAnimation(animation, "jump", 2);
         } else if (isPlayerWalk(player)) {
-            replaceAnimation("walking");
+            replaceAnimation(animation, "walking");
         } else {
-            if (replaceAnimation("rest")) return;
+            if (replaceAnimation(animation, "rest")) return;
             animation.setAnimation(frameLocation("rest"));
         }
         if (player.onGround() && compoundTag.getBoolean("jump")) {
@@ -69,7 +68,7 @@ public class ForgeEvent {
             PlayerAnimationAccess.PlayerAssociatedAnimationData animationData = PlayerAnimationAccess.getPlayerAssociatedData(player);
             ModifierLayer<IAnimation> animation = (ModifierLayer<IAnimation>) animationData.get(animationLocation("player_animation"));
             if (animation == null) return;
-            replaceAnimation(animation,"put");
+            replaceAnimation(animation,"put", 2);
         }
     }
 }
