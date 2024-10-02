@@ -1,18 +1,18 @@
 {
     "name": "put",
-    "author": "KL_jiana",
+    "author": "Kaleb Langley",
     "description": "description",
     "emote":{
         "isLoop": "false",
         "returnTick": 2,
         "beginTick":0,
-        "endTick":12,
-        "stopTick":12,
+        "endTick":6,
+        "stopTick":6,
         "degrees":false,
         "moves":[
             
             {
-                "tick":6,
+                "tick":1,
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "rightArm":{
@@ -20,11 +20,19 @@
                 }
             },
             {
-                "tick":12,
+                "tick":6,
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "rightArm":{
-                    "yaw":0.10261031240224838
+                    "yaw":0.12829235196113586
+                }
+            },
+            {
+                "tick":1,
+                "easing": "EASEINOUTQUAD",
+                "turn": 0,
+                "rightArm":{
+                    "roll":0.2661040723323822
                 }
             },
             {
@@ -32,19 +40,11 @@
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "rightArm":{
-                    "roll":0.09157109260559082
+                    "roll":0.12493892014026642
                 }
             },
             {
-                "tick":12,
-                "easing": "EASEINOUTQUAD",
-                "turn": 0,
-                "rightArm":{
-                    "roll":0.26678964495658875
-                }
-            },
-            {
-                "tick":6,
+                "tick":1,
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "rightArm":{
@@ -52,15 +52,15 @@
                 }
             },
             {
-                "tick":12,
+                "tick":6,
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "rightArm":{
-                    "pitch":-0.07384856045246124
+                    "pitch":-0.17048418521881104
                 }
             },
             {
-                "tick":6,
+                "tick":2,
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "rightArm":{
@@ -68,11 +68,11 @@
                 }
             },
             {
-                "tick":12,
+                "tick":6,
                 "easing": "EASEINOUTQUAD",
                 "turn": 0,
                 "rightArm":{
-                    "bend":-0.5029317736625671
+                    "bend":-0.6751485466957092
                 }
             }
         ]

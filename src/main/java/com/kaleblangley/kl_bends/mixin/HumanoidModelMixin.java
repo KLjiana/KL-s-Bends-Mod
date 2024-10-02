@@ -1,4 +1,4 @@
-package com.kljiana.kl_bends.mixin;
+package com.kaleblangley.kl_bends.mixin;
 
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.world.entity.LivingEntity;

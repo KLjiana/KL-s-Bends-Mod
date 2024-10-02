@@ -1,4 +1,4 @@
-package com.kljiana.kl_bends.util;
+package com.kaleblangley.kl_bends.util;
 
 import net.minecraft.client.player.AbstractClientPlayer;
 

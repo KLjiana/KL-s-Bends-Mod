@@ -1,6 +1,6 @@
-package com.kljiana.kl_bends.util;
+package com.kaleblangley.kl_bends.util;
 
-import com.kljiana.kl_bends.BendsMod;
+import com.kaleblangley.kl_bends.BendsMod;
 import dev.kosmx.playerAnim.api.layered.IAnimation;
 import dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer;
 import dev.kosmx.playerAnim.api.layered.ModifierLayer;
@@ -23,7 +23,7 @@ public class AnimUtil {
     }
 
     public static boolean replaceAnimation(ModifierLayer<IAnimation> animation, String name){
-        return replaceAnimation(animation, name, 10, Ease.OUTEXPO);
+        return replaceAnimation(animation, name, 1, Ease.OUTEXPO);
     }
 
     public static boolean replaceAnimation(ModifierLayer<IAnimation> animation, String name, int length){

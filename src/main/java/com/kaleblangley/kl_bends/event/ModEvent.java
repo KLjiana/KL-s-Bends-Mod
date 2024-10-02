@@ -1,6 +1,6 @@
-package com.kljiana.kl_bends.event;
+package com.kaleblangley.kl_bends.event;
 
-import com.kljiana.kl_bends.BendsMod;
+import com.kaleblangley.kl_bends.BendsMod;
 import dev.kosmx.playerAnim.api.layered.IAnimation;
 import dev.kosmx.playerAnim.api.layered.ModifierLayer;
 import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationFactory;

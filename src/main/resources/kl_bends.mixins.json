@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.kljiana.kl_bends.mixin",
+  "package": "com.kaleblangley.kl_bends.mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "kl_bends.refmap.json",
   "mixins": [

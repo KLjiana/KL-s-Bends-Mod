@@ -1,4 +1,4 @@
-package com.kljiana.kl_bends;
+package com.kaleblangley.kl_bends;
 
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.fml.common.Mod;

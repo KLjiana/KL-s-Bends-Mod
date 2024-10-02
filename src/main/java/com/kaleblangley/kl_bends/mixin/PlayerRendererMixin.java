@@ -1,4 +1,4 @@
-package com.kljiana.kl_bends.mixin;
+package com.kaleblangley.kl_bends.mixin;
 
 import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import org.spongepowered.asm.mixin.Mixin;
