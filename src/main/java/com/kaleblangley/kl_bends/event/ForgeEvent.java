@@ -87,7 +87,7 @@ public class ForgeEvent {
             part.rightLeg.setEnabled(false);
 
             PlayerAnimationData data = new PlayerAnimationData(player.getUUID(), animationLocation("put"),
-                    part, null, -1, -1, 42, false);
+                    part, null, -1, -1, 100, false);
             PlayerAnimations.playAnimation(player, data);
             //replaceAnimation(animation,"put", 2);
         }
